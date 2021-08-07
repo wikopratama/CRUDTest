@@ -1,0 +1,42 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Order List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Employee</th>
+          <th>Order Date</th>
+          <th>Order Number</th>
+          <th>ShipDate</th>
+          <th>Shipping Method</th>
+          <th>Freight Charge</th>
+          <th>Taxes</th>
+          <th>Payment Received</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders | async">
+          <td>{{order.customer | json}}</td>
+          <td>{{order.employee | json}}</td>
+          <td>{{order.orderDate}}</td>
+          <td>{{order.orderNumber}}</td>
+          <td>{{order.shipDate}}</td>
+          <td>{{order.shipping | json}}</td>
+          <td>{{order.freightCharge}}</td>
+          <td>{{order.taxes}}</td>
+          <td>{{order.paymentReceived}}</td>
+          <td>{{order.comment}}</td>
+          <td>
+<!--            <button (click)="deleteOrder(order.orderID)" class="btn btn-danger">Delete</button>-->
+<!--          	  <button (click)="updateOrder(order.orderID)" class="btn btn-info" style="margin-left: 10px">Update</button>-->
+              <button (click)="orderDetails(order.orderID)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<h2>Order Details</h2>
+
+<hr/>
+<div *ngIf="detail">
+  <div>
+    <label><b>Company Name: </b></label> {{detail.custComp}}
+  </div>
+  <div>
+    <label><b>Customer Name: </b></label> {{detail.custFName}} {{detail.custLName}}
+  </div>
+  <div>
+    <label><b>Employee Name: </b></label> {{detail.empFName}} {{detail.empLName}}
+  </div>
+  <div>
+    <label><b>Shipping Method: </b></label> {{detail.shipping}}
+  </div>
+  <div>
+    <label><b>Product Name: </b></label> {{detail.productName}}
+  </div>
+  <div>
+    <label><b>Quantity: </b></label> {{detail.quantity}}
+  </div>
+  <div>
+    <label><b>Unit Price: </b></label> {{detail.unitPrice}}
+  </div>
+  <div>
+    <label><b>Discount: </b></label> {{detail.discount}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Order List</button><br>
